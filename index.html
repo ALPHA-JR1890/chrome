@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChromeOS Hidden Shortcuts Diagnostic Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>ChromeOS Hidden Shortcuts Reference</h1>
+        <p>Click on any shortcut card below to reveal its low-level function and diagnostic breakdown.</p>
+    </header>
+
+    <!-- SECTION 1 -->
+    <div class="category-title">Magic SysRq Kernel Diagnostics</div>
+    <div class="shortcut-grid">
+        <div class="shortcut-card">
+            <div>
+                <div class="keys"><kbd>Alt</kbd>+<kbd>Volume Up</kbd>+<kbd>X</kbd></div>
+                <div class="label">Restart Chrome Browser UI</div>
+            </div>
+            <div class="explanation-box">
+                Instructs the underlying Linux kernel to selectively crash and restart the user-facing Chrome display manager process. Useful when the screen is frozen but the core kernel is still alive.
+            </div>
+        </div>
+
+        <div class="shortcut-card">
+            <div>
+                <div class="keys"><kbd>Alt</kbd>+<kbd>Volume Up</kbd>+<kbd>X</kbd> (3 Times)</div>
+                <div class="label">Trigger Hard Kernel Panic</div>
+            </div>
+            <div class="explanation-box">
+                Repeatedly tapping this sequence forces an intentional Kernel Panic. This immediately triggers a hard, hardware-level master reset sequence to free up severe device lockups.
+            </div>
+        </div>
+
+        <div class="shortcut-card">
+            <div>
+                <div class="keys"><kbd>Alt</kbd>+<kbd>Volume Up</kbd>+<kbd>R</kbd></div>
+                <div class="label">Warm AP Reset</div>
+            </div>
+            <div class="explanation-box">
+                Directly triggers a warm reset of the Application Processor (AP). Instantly reboots the main CPU architecture without fully cutting core power lines.
+            </div>
+        </div>
+
+        <div class="shortcut-card">
+            <div>
+                <div class="keys"><kbd>Alt</kbd>+<kbd>Volume Up</kbd>+<kbd>H</kbd></div>
+                <div class="label">Force Embedded Controller Hibernate</div>
+            </div>
+            <div class="explanation-box">
+                Commands the low-level Embedded Controller (EC) firmware to go to sleep instantly. This immediately drops device power consumption and turns off the unit cleanly.
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="category-title">Power & Hardware Motherboard Overrides</div>
+    <div class="shortcut-grid">
+        <div class="shortcut-card">
+            <div>
+                <div class="keys"><kbd>Power</kbd>+<kbd>Refresh</kbd> (Hold 5s while unplugging)</div>
+                <div class="label">Battery Cutoff Mode</div>
+            </div>
+            <div class="explanation-box">
+                Logically disconnects the internal battery hardware interface from the motherboard rails. Used by repair centers for safe storage; the device will remain dead until you physically plug a USB-C charger back in.
+            </div>
+        </div>
+
+        <div class="shortcut-card">
+            <div>
+                <div class="keys"><kbd>L-Ctrl</kbd>+<kbd>R-Ctrl</kbd>+<kbd>Search</kbd>+<kbd>0/1/2</kbd></div>
+                <div class="label">Override USB-C Charging Port</div>
+            </div>
+            <div class="explanation-box">
+                Overrides the default power delivery (PD) negotiation protocol. Forces the Chromebook hardware to pull power from a specific target USB-C port instead of choosing automatically.
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div class="category-title">Hidden System & UI Toggles</div>
+    <div class="shortcut-grid">
+        <div class="shortcut-card">
+            <div>
+                <div class="keys"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>Refresh</kbd></div>
+                <div class="label">The Hidden Window Spin</div>
+            </div>
+            <div class="explanation-box">
+                A classic internal operating system Easter Egg. It takes your actively focused browser or application window and spins it in a full 360-degree, 3D barrel roll animation.
+            </div>
+        </div>
+
+        <div class="shortcut-card">
+            <div>
+                <div class="keys"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Refresh</kbd></div>
+                <div class="label">Rotate Display 90 Degrees</div>
+            </div>
+            <div class="explanation-box">
+                Bypasses the display settings menu entirely. Every single keypress instantly rotates your entire screen landscape/portrait orientation by 90 degrees clockwise.
+            </div>
+        </div>
+
+        <div class="shortcut-card">
+            <div>
+                <div class="keys"><kbd>Ctrl</kbd>+<kbd>.</kbd></div>
+                <div class="label">Toggle Hidden Files & Folders</div>
+            </div>
+            <div class="explanation-box">
+                When inside the native ChromeOS Files application, this key combination instantly toggles the visibility of hidden folders and Linux system file roots starting with dots.
+            </div>
+        </div>
+
+        <div class="shortcut-card">
+            <div>
+                <div class="keys"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>J</kbd></div>
+                <div class="label">Launch Chrome Developer Console</div>
+            </div>
+            <div class="explanation-box">
+                Instantly breaks open the split JavaScript engine runtime and console panel alongside your current browser window tab to track background scripts or app errors.
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div class="category-title">Advanced Recovery & Firmware Menus</div>
+    <div class="shortcut-grid">
+        <div class="shortcut-card">
+            <div>
+                <div class="keys"><kbd>Esc</kbd>+<kbd>Refresh</kbd>+<kbd>Power</kbd></div>
+                <div class="label">Hard Firmware Recovery Mode</div>
+            </div>
+            <div class="explanation-box">
+                Bypasses the entire standard local solid-state drive boot partition. Shuts down operations and drops into the fundamental hardware boot loader screen to verify external recovery USB sticks.
+            </div>
+        </div>
+
+        <div class="shortcut-card">
+            <div>
+                <div class="keys"><kbd>Ctrl</kbd>+<kbd>D</kbd> (On Recovery Screen)</div>
+                <div class="label">Toggle Full Developer Mode</div>
+            </div>
+            <div class="explanation-box">
+                Bypasses verification roots on the raw recovery boot screen menu to fully unpack Developer Mode privileges, allowing root access shell capabilities and custom kernel modifications.
+            </div>
+        </div>
+
+        <div class="shortcut-card">
+            <div>
+                <div class="keys"><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd></div>
+                <div class="label">Instant Out-Of-Box Factory Reset</div>
+            </div>
+            <div class="explanation-box">
+                When pressed sitting on the standard user profile sign-in layout interface, this commands the device to completely flush local user spaces and run an immediate factory clean Powerwash.
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
